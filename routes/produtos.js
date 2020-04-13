@@ -10,10 +10,16 @@ router.get('/', (req, res, next)=> {
 
 
 // Inserindo POST de Produtos
-router.post('/', (req, res, next)=> {
+router.post('/', (req, res, next) => {
+    
+    const produto = {
+        nome: req.body.nome,
+        preco: req.body.preco
+    };  
     res.status(201).send({
-        mensagem: 'Post de Produtos'
-    }); 
+        mensagem: 'Insere um Produto',
+        protudoCriado: produto
+    }) 
 });
 
 // Buscando ID de Produto
